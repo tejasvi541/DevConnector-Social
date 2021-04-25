@@ -13,6 +13,7 @@ const router = express.Router();
 // @route       POST api/users
 // @desc        Register
 // @access      PUBLIC
+
 router.post(
   "/",
   [
