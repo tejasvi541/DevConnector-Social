@@ -11,7 +11,7 @@
 
 # TODOs
 
-- Profile Management
-- Displaying Profiles
+- <s>Profile Management </s>
+- <s>Displaying Profiles </s>
 - Posts and Comments Implementation
 - Deployment
