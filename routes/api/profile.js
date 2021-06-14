@@ -3,7 +3,7 @@ const { check, validationResult } = require("express-validator/check");
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
 const Post = require("../../models/Post");
-const config = require("config");
+// const config = require("config");
 const auth = require("../../middleware/auth");
 const axios = require("axios");
 
@@ -197,15 +197,8 @@ router.put(
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    const {
-      title,
-      company,
-      location,
-      from,
-      to,
-      current,
-      description,
-    } = req.body;
+    const { title, company, location, from, to, current, description } =
+      req.body;
 
     const newExp = {
       title,
@@ -274,15 +267,8 @@ router.put(
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
-    const {
-      school,
-      degree,
-      fieldofstudy,
-      from,
-      to,
-      current,
-      description,
-    } = req.body;
+    const { school, degree, fieldofstudy, from, to, current, description } =
+      req.body;
 
     const newEdu = {
       school,
@@ -341,7 +327,7 @@ router.get("/github/:username", async (req, res) => {
     );
     const headers = {
       "user-agent": "node.js",
-      Authorization: `token ${config.get("githubToken")}`,
+      Authorization: `token ${process.env.githubToken}`,
     };
 
     const gitHubResponse = await axios.get(uri, { headers });

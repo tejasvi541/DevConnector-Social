@@ -9,7 +9,7 @@ lerna-debug.log*
 
 # config files
 /config/default.json
-
+/config/config.env
 # HTML/CSS Files
 /html_css_theme
 
